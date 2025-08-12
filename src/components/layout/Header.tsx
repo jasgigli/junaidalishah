@@ -79,7 +79,7 @@ export const Header = () => {
           </Button>
 
           <a
-            href="/resume.pdf"
+            href="/Junaid_Ali_Shah_Full_Stack_Developer.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-4 text-sm font-medium text-primary hover:underline"
