@@ -103,7 +103,7 @@ export const Hero = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
-            <a href="/resume.pdf" download>
+            <a href="/Junaid_Ali_Shah_Full_Stack_Developer.pdf" download>
               <Button size="lg" variant="outline" className="group">
                 Download CV
                 <Download className="ml-2 h-4 w-4" />
