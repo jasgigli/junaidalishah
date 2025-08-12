@@ -1,8 +1,13 @@
 import { Nav } from "@/components/organisms/Nav";
 import { Hero } from "@/components/organisms/Hero";
-import { Projects } from "@/components/organisms/Projects";
+import { About } from "@/components/organisms/About";
 import { Timeline } from "@/components/organisms/Timeline";
 import { Skills } from "@/components/organisms/Skills";
+import { Projects } from "@/components/organisms/Projects";
+import { Proof } from "@/components/organisms/Proof";
+import { Blog } from "@/components/organisms/Blog";
+import { Contact } from "@/components/organisms/Contact";
+import { Footer } from "@/components/organisms/Footer";
 
 const Index = () => {
   return (
@@ -10,16 +15,15 @@ const Index = () => {
       <Nav />
       <main>
         <Hero />
+        <About />
+        <Timeline />
         <Skills />
         <Projects />
-        <Timeline />
+        <Proof />
+        <Blog />
+        <Contact />
       </main>
-      <footer id="contact" className="border-t border-border">
-        <div className="container mx-auto py-8 text-sm text-muted-foreground flex items-center justify-between">
-          <p>© <span>{new Date().getFullYear()}</span> Junaid Ali Shah Gigli</p>
-          <a href="mailto:hello@junaid.sh" className="story-link">hello@junaid.sh</a>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
