@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { socialLinks } from '@/config/site';
+import { socialLinks, siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 import { ArrowUp } from 'lucide-react';
 
@@ -23,7 +23,8 @@ export const Footer = () => {
               </span>
             </div>
             <p className="max-w-xs text-sm text-muted-foreground">
-              Building exceptional digital experiences with modern web technologies.
+              Full-Stack Software Engineer building scalable web and cloud
+              applications with modern technologies.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -84,15 +85,17 @@ export const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/blog"
+                    href={siteConfig.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    Blog
+                    GitHub
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/resume.pdf"
+                    href={siteConfig.resume}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -103,22 +106,24 @@ export const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold mb-4">Legal</h3>
+              <h3 className="text-sm font-semibold mb-4">Connect</h3>
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="/privacy"
+                    href={siteConfig.links.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    Privacy Policy
+                    LinkedIn
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/terms"
+                    href={siteConfig.links.email}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    Terms of Service
+                    Email
                   </a>
                 </li>
                 <li>
@@ -137,7 +142,7 @@ export const Footer = () => {
         <div className="pt-12 mt-12 border-t border-border">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Junaid Ali Shah. All rights reserved.
+              © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
             </p>
             <Button
               variant="ghost"

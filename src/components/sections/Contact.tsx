@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { SectionHeader } from '@/components/ui/section-header';
-import { socialLinks } from '@/config/site';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { socialLinks, siteConfig } from '@/config/site';
+import { Github, Mail, MapPin } from 'lucide-react';
 
 export const Contact = () => {
   const container = {
@@ -22,9 +22,17 @@ export const Contact = () => {
     show: { opacity: 1, y: 0 },
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const subject = encodeURIComponent(
+      (data.get('subject') as string) || `Portfolio inquiry from ${data.get('name')}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`
+    );
+    window.location.href = `${siteConfig.links.email}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -58,25 +66,27 @@ export const Contact = () => {
                 <div>
                   <h4 className="font-medium">Email Me</h4>
                   <a 
-                    href="mailto:contact@junaid.sh" 
+                    href={siteConfig.links.email} 
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    contact@junaid.sh
+                    {siteConfig.links.email.replace('mailto:', '')}
                   </a>
                 </div>
               </div>
               
               <div className="flex items-start space-x-4">
                 <div className="p-2 bg-primary/10 rounded-full text-primary">
-                  <Phone className="w-5 h-5" />
+                  <Github className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Call Me</h4>
+                  <h4 className="font-medium">GitHub</h4>
                   <a 
-                    href="tel:+1234567890" 
+                    href={siteConfig.links.github} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +1 (234) 567-890
+                    github.com/jasgigli
                   </a>
                 </div>
               </div>
@@ -88,7 +98,7 @@ export const Contact = () => {
                 <div>
                   <h4 className="font-medium">Location</h4>
                   <p className="text-muted-foreground">
-                    San Francisco Bay Area, CA
+                    {siteConfig.location} · Remote-friendly
                   </p>
                 </div>
               </div>
@@ -123,6 +133,7 @@ export const Contact = () => {
                   </label>
                   <Input 
                     id="name" 
+                    name="name"
                     placeholder="John Doe" 
                     required 
                     className="bg-background"
@@ -134,6 +145,7 @@ export const Contact = () => {
                   </label>
                   <Input 
                     id="email" 
+                    name="email"
                     type="email" 
                     placeholder="john@example.com" 
                     required 
@@ -148,6 +160,7 @@ export const Contact = () => {
                 </label>
                 <Input 
                   id="subject" 
+                  name="subject"
                   placeholder="What's this about?" 
                   className="bg-background"
                 />
@@ -159,6 +172,7 @@ export const Contact = () => {
                 </label>
                 <Textarea 
                   id="message" 
+                  name="message"
                   placeholder="Your message here..." 
                   rows={5} 
                   required 

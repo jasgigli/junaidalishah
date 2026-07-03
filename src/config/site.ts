@@ -1,17 +1,20 @@
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 export const siteConfig = {
-  name: 'Junaid Ali Shah',
-  title: 'Junaid Ali Shah | Senior Full-Stack Engineer',
+  name: 'Junaid Ali Shah Gigli',
+  shortName: 'Junaid Ali Shah',
+  title: 'Junaid Ali Shah Gigli | Full-Stack Software Engineer',
   description:
-    'Senior Full-Stack Engineer with expertise in modern web technologies. Building scalable, performant, and accessible web applications.',
-  url: 'https://junaid.sh',
-  ogImage: 'https://junaid.sh/og-image.jpg',
+    'Full-Stack Software Engineer building scalable web and cloud applications with React.js, Node.js, AWS, and microservices architecture.',
+  url: 'https://junaidalishah.vercel.app',
+  location: 'Peshawar, Pakistan',
+  avatar: 'https://avatars.githubusercontent.com/u/167529475?v=4',
+  resume: '/Junaid_Ali_Shah_Full_Stack_Developer.pdf',
   links: {
     github: 'https://github.com/jasgigli',
     linkedin: 'https://linkedin.com/in/jasgigli',
-    twitter: 'https://twitter.com/jasgigli',
-    email: 'mailto:contact@junaid.sh',
+    twitter: 'https://twitter.com/jasgiigli',
+    email: 'mailto:overview.jjj@gmail.com',
   },
 };
 
@@ -38,142 +41,118 @@ export const socialLinks = [
   },
 ];
 
+export const highlights = [
+  { value: '45+', label: 'Open-source repositories' },
+  { value: '10+', label: 'Production projects shipped' },
+  { value: '4+', label: 'Years writing software' },
+  { value: '5+', label: 'npm packages published' },
+];
+
 export const skills = {
-  languages: [
-    'TypeScript',
-    'JavaScript',
-    'Python',
-    'Go',
-    'Rust',
-    'SQL',
-  ],
+  languages: ['TypeScript', 'JavaScript', 'Python', 'Go', 'Rust', 'SQL'],
   frontend: [
     'React',
     'Next.js',
     'Tailwind CSS',
     'Redux',
-    'GraphQL',
     'Framer Motion',
+    'shadcn/ui',
   ],
-  backend: [
-    'Node.js',
-    'Express',
-    'NestJS',
-    'Django',
-    'FastAPI',
-    'gRPC',
-  ],
-  devops: [
-    'Docker',
-    'Kubernetes',
-    'AWS',
-    'GCP',
-    'Terraform',
-    'CI/CD',
-  ],
-  databases: [
-    'PostgreSQL',
-    'MongoDB',
-    'Redis',
-    'Elasticsearch',
-  ],
-  tools: [
-    'Git',
-    'Linux',
-    'VSCode',
-    'Jest',
-    'Cypress',
-    'Storybook',
-  ],
+  backend: ['Node.js', 'Express', 'NestJS', 'FastAPI', 'REST APIs', 'GraphQL'],
+  devops: ['Docker', 'AWS', 'Vercel', 'CI/CD', 'GitHub Actions', 'Linux'],
+  databases: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL'],
+  tools: ['Git', 'VS Code', 'Jest', 'Vite', 'Postman', 'Figma'],
 };
 
 export const experience = [
   {
     id: 1,
-    role: 'Senior Full-Stack Engineer',
-    company: 'TechCorp',
-    period: '2021 - Present',
+    role: 'Full-Stack Software Engineer',
+    company: 'Giant Tech Solutions LLC',
+    period: '2023 - Present',
     description: [
-      'Led a team of 5 engineers to build a scalable microservices architecture serving 1M+ users',
-      'Improved application performance by 40% through code optimization and infrastructure improvements',
-      'Implemented CI/CD pipelines reducing deployment time from 20 minutes to under 2 minutes',
-      'Mentored junior developers and conducted technical interviews for new hires',
+      'Design and build scalable web applications with React, Node.js, and cloud-native architectures',
+      'Develop RESTful and real-time APIs powering customer-facing products',
+      'Own features end-to-end: system design, implementation, testing, and deployment',
+      'Collaborate with designers and stakeholders to ship polished, accessible UIs',
     ],
-    technologies: ['TypeScript', 'React', 'Node.js', 'Kubernetes', 'AWS'],
+    technologies: ['TypeScript', 'React', 'Node.js', 'PostgreSQL', 'AWS'],
   },
   {
     id: 2,
-    role: 'Full-Stack Developer',
-    company: 'WebSolutions Inc.',
-    period: '2018 - 2021',
+    role: 'Software Engineer',
+    company: 'Z-Graphics LLC',
+    period: '2021 - 2023',
     description: [
-      'Developed and maintained customer-facing web applications using modern JavaScript frameworks',
-      'Reduced page load time by 60% through performance optimization techniques',
-      'Collaborated with cross-functional teams to implement new features and fix bugs',
-      'Contributed to open-source projects and wrote technical blog posts',
+      'Built and maintained customer-facing web applications using modern JavaScript frameworks',
+      'Improved page performance and Core Web Vitals through code-splitting and asset optimization',
+      'Integrated third-party services and payment providers into production systems',
+      'Contributed to open-source tooling and internal component libraries',
     ],
     technologies: ['JavaScript', 'React', 'Express', 'MongoDB', 'Docker'],
   },
-  // Add more experiences as needed
 ];
 
 export const projects = [
   {
     id: 1,
-    title: 'E-commerce Platform',
-    description: 'A full-featured e-commerce platform with real-time inventory management and payment processing.',
-    technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe'],
-    githubUrl: '#',
-    liveUrl: '#',
-    image: '/projects/ecommerce.jpg',
+    title: 'gigli.js',
+    description:
+      'Metamorphic, type-safe validation engine for TypeScript with a unified runtime and compile-time schema. Published on npm.',
+    technologies: ['TypeScript', 'npm package', 'Zero-dependency'],
+    githubUrl: 'https://github.com/jasgigli/gigli.js',
+    liveUrl: 'https://www.npmjs.com/package/gigli.js',
     featured: true,
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates and team collaboration features.',
-    technologies: ['React', 'Firebase', 'Material-UI'],
-    githubUrl: '#',
-    liveUrl: '#',
-    image: '/projects/taskapp.jpg',
+    title: 'OmniRequest',
+    description:
+      'A modern, powerful JavaScript library for seamless API requests with interceptors, retries, and caching built in.',
+    technologies: ['TypeScript', 'HTTP client', 'npm package'],
+    githubUrl: 'https://github.com/jasgigli/omni-request',
+    liveUrl: 'https://www.npmjs.com/package/omnirequest',
     featured: true,
   },
-  // Add more projects as needed
-];
-
-export const education = [
   {
-    id: 1,
-    degree: 'MSc in Computer Science',
-    institution: 'Stanford University',
-    period: '2016 - 2018',
-    description: 'Specialized in Artificial Intelligence and Machine Learning',
+    id: 3,
+    title: 'Build Your Own Redis',
+    description:
+      'An educational, extensible Redis clone built from scratch in Node.js — covering the wire protocol, data structures, and persistence.',
+    technologies: ['Node.js', 'Systems', 'Education'],
+    githubUrl: 'https://github.com/jasgigli/build-your-own-redis',
+    liveUrl: '',
+    featured: true,
   },
   {
-    id: 2,
-    degree: 'BSc in Software Engineering',
-    institution: 'MIT',
-    period: '2012 - 2016',
-    description: 'Graduated with First Class Honors',
-  },
-];
-
-export const certifications = [
-  {
-    id: 1,
-    name: 'AWS Certified Solutions Architect - Professional',
-    issuer: 'Amazon Web Services',
-    date: '2022',
-    credentialId: 'ABC123XYZ',
-    credentialUrl: '#',
+    id: 4,
+    title: 'ReviewMesh',
+    description:
+      'Peer-to-peer code review in your terminal. No servers, no friction — just code review over a distributed mesh.',
+    technologies: ['Rust', 'P2P', 'CLI'],
+    githubUrl: 'https://github.com/jasgigli/review-mesh',
+    liveUrl: '',
+    featured: true,
   },
   {
-    id: 2,
-    name: 'Google Cloud Professional Cloud Architect',
-    issuer: 'Google Cloud',
-    date: '2021',
-    credentialId: 'XYZ789ABC',
-    credentialUrl: '#',
+    id: 5,
+    title: 'GigliZip',
+    description:
+      'A fast, interactive, cross-platform file and folder compression tool built in Rust for speed and ergonomics.',
+    technologies: ['Rust', 'CLI', 'Compression'],
+    githubUrl: 'https://github.com/jasgigli/GigliZip',
+    liveUrl: '',
+    featured: true,
+  },
+  {
+    id: 6,
+    title: 'Restaurant Management System',
+    description:
+      'Full-stack restaurant management platform with ordering, inventory, and analytics dashboards.',
+    technologies: ['React', 'Express', 'shadcn/ui', 'React Query'],
+    githubUrl: 'https://github.com/jasgigli/restaurant-management-system',
+    liveUrl: '',
+    featured: true,
   },
 ];
 

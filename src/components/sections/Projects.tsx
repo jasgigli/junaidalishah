@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
-import { projects } from '@/config/site';
-import { Github, ExternalLink } from 'lucide-react';
+import { projects, siteConfig } from '@/config/site';
+import { Github, ExternalLink, Folder } from 'lucide-react';
 
 export const Projects = () => {
   const container = {
@@ -41,26 +41,23 @@ export const Projects = () => {
             <motion.div
               key={project.id}
               variants={item}
-              className="group relative overflow-hidden rounded-xl border border-border bg-card hover:shadow-lg transition-all duration-300"
+              className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card hover:shadow-lg hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <div className="flex gap-2">
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                    <Folder className="w-6 h-6" />
+                  </div>
+                  <div className="flex gap-1">
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-background/80 rounded-full hover:bg-background transition-colors"
+                        className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                         aria-label={`View ${project.title} on GitHub`}
                       >
-                        <Github className="w-4 h-4" />
+                        <Github className="w-5 h-5" />
                       </a>
                     )}
                     {project.liveUrl && (
@@ -68,23 +65,21 @@ export const Projects = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-background/80 rounded-full hover:bg-background transition-colors"
+                        className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                         aria-label={`View ${project.title} live demo`}
                       >
-                        <ExternalLink className="w-4 h-4" />
+                        <ExternalLink className="w-5 h-5" />
                       </a>
                     )}
                   </div>
                 </div>
-              </div>
-              <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <p className="text-muted-foreground mb-6 flex-1">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} variant="secondary" className="text-xs font-mono">
                       {tech}
                     </Badge>
                   ))}
@@ -101,9 +96,15 @@ export const Projects = () => {
           transition={{ delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <Button variant="outline" size="lg">
-            View All Projects
-            <ExternalLink className="w-4 h-4 ml-2" />
+          <Button variant="outline" size="lg" asChild>
+            <a
+              href={`${siteConfig.links.github}?tab=repositories`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="w-4 h-4 mr-2" />
+              View All Projects on GitHub
+            </a>
           </Button>
         </motion.div>
       </div>
