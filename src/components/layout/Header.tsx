@@ -5,6 +5,7 @@ import { Button } from '../ui/button';
 import { useTheme } from 'next-themes';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { siteConfig } from '@/config/site';
 
 const navigation = [
   { name: 'About', href: '#about' },
@@ -43,7 +44,7 @@ export const Header = () => {
     >
       <nav className="container flex items-center justify-between h-16 px-4 mx-auto sm:px-6 lg:px-8" aria-label="Global">
         <div className="flex items-center flex-1">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               JAS
             </span>
@@ -79,7 +80,7 @@ export const Header = () => {
           </Button>
 
           <a
-            href="/Junaid_Ali_Shah_Full_Stack_Developer.pdf"
+            href={siteConfig.resume}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-4 text-sm font-medium text-primary hover:underline"
@@ -135,7 +136,7 @@ export const Header = () => {
                 </Button>
               </div>
               <a
-                href="/resume.pdf"
+                href={siteConfig.resume}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-3 py-2 mt-2 text-base font-medium text-primary hover:bg-muted/50 rounded-md"

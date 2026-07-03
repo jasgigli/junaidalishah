@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useTheme } from "next-themes";
+import { siteConfig } from "@/config/site";
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,11 +14,11 @@ interface LayoutProps {
 
 export const Layout = ({
   children,
-  title = "Junaid Ali Shah | Senior Full-Stack Engineer | SaaS & System Design Expert",
-  description = "Senior Full-Stack Engineer specializing in modern web technologies, SaaS development, system design, and scalable, performant applications for enterprise and FAANG-level companies.",
-  canonicalUrl = "https://junaid.sh",
-  ogImage = "/og-image.jpg",
-  keywords = "Junaid Ali Shah, Senior Full-Stack Engineer, SaaS Developer, System Design, React, Next.js, TypeScript, Node.js, FAANG portfolio",
+  title = siteConfig.title,
+  description = siteConfig.description,
+  canonicalUrl = siteConfig.url,
+  ogImage = siteConfig.avatar,
+  keywords = "Junaid Ali Shah Gigli, Full-Stack Software Engineer, React, Node.js, TypeScript, AWS, Microservices, Portfolio",
 }: LayoutProps) => {
   const { theme } = useTheme();
 
@@ -30,24 +31,24 @@ export const Layout = ({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Junaid Ali Shah Gigli",
+    name: siteConfig.name,
     url: canonicalUrl,
-    jobTitle: "Senior Full-Stack Engineer",
+    jobTitle: "Full-Stack Software Engineer",
     worksFor: {
       "@type": "Organization",
-      name: "Freelance / Open to Opportunities",
+      name: "Giant Tech Solutions LLC",
     },
     sameAs: [
-      "https://github.com/jasgigli",
-      "https://www.linkedin.com/in/jasgigli",
-      "https://twitter.com/jasgigli",
+      siteConfig.links.github,
+      siteConfig.links.linkedin,
+      siteConfig.links.twitter,
     ],
   };
 
   const websiteData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Junaid Ali Shah Portfolio",
+    name: `${siteConfig.name} Portfolio`,
     url: canonicalUrl,
     potentialAction: {
       "@type": "SearchAction",
@@ -64,7 +65,7 @@ export const Layout = ({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <meta name="author" content="Junaid Ali Shah Gigli" />
+        <meta name="author" content={siteConfig.name} />
         <meta name="language" content="en" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="theme-color" content={theme === "dark" ? "#0f172a" : "#ffffff"} />
@@ -75,7 +76,7 @@ export const Layout = ({
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:site_name" content="Junaid Ali Shah Portfolio" />
+        <meta property="og:site_name" content={`${siteConfig.name} Portfolio`} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -83,7 +84,7 @@ export const Layout = ({
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:creator" content="@jasgigli" />
+        <meta name="twitter:creator" content="@jasgiigli" />
 
         {/* Canonical URL */}
         <link rel="canonical" href={canonicalUrl} />
@@ -92,15 +93,6 @@ export const Layout = ({
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* Preload Fonts */}
-        <link
-          rel="preload"
-          href="/fonts/inter-var-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
 
         <title>{title}</title>
 
